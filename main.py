@@ -1,7 +1,12 @@
-from player import Player
 
-from sequence import Sequence
+from game import Game
 
-sequence = Sequence()
 
-sequence.random_sequence()
+game = Game()
+game.initialize_player()
+game.launch_sequence()
+game.player_turn()
+
+for self.play in self.sequence:
+            if self.play == self.sequence:
+                print("good")
