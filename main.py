@@ -5,9 +5,16 @@ game = Game()
 game.initialize_player()
 continuer = True
 
-while continuer:
+
+while continuer == True:
     game.launch_sequence() 
     game.comparison() 
-    if game.comparison() == "n":
-        continuer = False
+    
+    #while game.comparison() == False:
+       # print("You lost, continue ? y/n: ")
+       # answer = input("")
+       # if answer == "n":
+           # continuer = False
+        
+    
 

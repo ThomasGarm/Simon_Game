@@ -5,7 +5,7 @@ import os
 
 class Game:
     def __init__(self):
-        self.display = 1
+        self.display = 2
         self.sequence = Sequence()
         self.player = Player()
 
@@ -31,6 +31,6 @@ class Game:
             player_choice = self.player_turn()
             self.clear_screen()
             if player_choice != element:
-               return input("Wrong, continue?")
+               return False
                
             
