@@ -23,12 +23,14 @@ class Game:
         os.system('clear' if os.name =='posix' else 'cls')
 
     def player_turn(self):
-        self.play = input("Your turn !: ")
-        self.clear_screen()
+        return int(input("Your turn !: "))
+        
 
     def comparison(self):
-        for self.play in self.sequence:
-            if self.play == self.sequence:
-                print("good")
-
-    
+        for element in self.sequence.sequence:
+            player_choice = self.player_turn()
+            self.clear_screen()
+            if player_choice != element:
+               return input("Wrong, continue?")
+               
+            

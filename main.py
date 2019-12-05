@@ -1,12 +1,13 @@
 
 from game import Game
 
-
 game = Game()
 game.initialize_player()
-game.launch_sequence()
-game.player_turn()
+continuer = True
 
-for self.play in self.sequence:
-            if self.play == self.sequence:
-                print("good")
+while continuer:
+    game.launch_sequence() 
+    game.comparison() 
+    if game.comparison() == "n":
+        continuer = False
+
