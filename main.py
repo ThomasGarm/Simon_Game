@@ -7,14 +7,15 @@ continuer = True
 
 
 while continuer == True:
-    game.launch_sequence() 
-    game.comparison() 
+    while game.comparison() == True:
+        game.launch_sequence() 
+        game.comparison() 
     
-    #while game.comparison() == False:
-       # print("You lost, continue ? y/n: ")
-       # answer = input("")
-       # if answer == "n":
-           # continuer = False
+        while game.comparison() == True:
+            print("You lost, continue ? y/n: ")
+            answer = input("")
+            if answer == "n":
+                continuer = False
         
     
 

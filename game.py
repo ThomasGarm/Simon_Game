@@ -31,7 +31,7 @@ class Game:
         
 
     def comparison(self):
-        """simon's rules"""
+        """simon's rules: check if the input is the same than sequence"""
         for element in self.sequence.sequence:
             player_choice = self.player_turn()
             self.clear_screen()
