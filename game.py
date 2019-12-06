@@ -5,7 +5,7 @@ import os
 
 class Game:
     def __init__(self):
-        self.display = 2
+        self.display = None
         self.sequence = Sequence()
         self.player = Player()
 
@@ -16,9 +16,9 @@ class Game:
     def launch_sequence(self):
         """get and display simon's sequences in amount of time"""
         self.sequence.random_sequence()
-        for i in self.sequence.sequence:
+        for i in self.sequence.number:
             print(i)
-            time.sleep(self.display)
+            time.sleep(self.display_difficulty())
             self.clear_screen()
             
     def clear_screen(self):
@@ -32,10 +32,24 @@ class Game:
 
     def comparison(self):
         """simon's rules: check if the input is the same than sequence"""
-        for element in self.sequence.sequence:
+        for element in self.sequence.number:
             player_choice = self.player_turn()
             self.clear_screen()
             if player_choice != element:
                return False
+
+    def level_difficulty(self):
+        self.difficulty = input("Choose the difficulty : easy, medium, hard: \n")
+
+
+    def display_difficulty(self):
+        if self.difficulty == "easy":
+            self.display = 3
+        if self.difficulty == "medium":
+            self.display = 2
+        if self.difficulty == "hard":
+            self.display = 1
+        return self.display
+
                
             

@@ -2,20 +2,19 @@
 from game import Game
 
 game = Game()
-game.initialize_player()
-continuer = True
+
+continuer = True #boolean
+
+game.initialize_player() #call the player name
+game.level_difficulty() #player choose between three level of difficulty
 
 
 while continuer == True:
-    while game.comparison() == True:
+    
         game.launch_sequence() 
         game.comparison() 
     
-        while game.comparison() == True:
-            print("You lost, continue ? y/n: ")
-            answer = input("")
-            if answer == "n":
-                continuer = False
+        
         
     
 
