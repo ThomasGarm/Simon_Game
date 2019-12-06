@@ -32,23 +32,27 @@ class Game:
 
     def player_turn(self):
         """get input from the player"""
-        return int(input("Your turn !: "))
+        try:
+            return int(input("Your turn !: "))
+        except ValueError:
+            print("Wrong entry, retry.")
+            self.player_turn()
         
-
     def comparison(self):
         """simon's rules: check if the input is the same than sequence"""
         for element in self.sequence.number:
             player_choice = self.player_turn()
             self.clear_screen()
             if player_choice != element:
-               return False
+                self.number = []
+                return False
 
     def level_difficulty(self):
         self.difficulty = input("Choose the difficulty : easy, medium, hard: \n").lower()
         try:
             assert self.difficulty == "easy" or self.difficulty == "medium" or self.difficulty == "hard"
         except AssertionError as a:
-            return self.level_difficulty()
+            self.level_difficulty()
 
 
     def display_difficulty(self):
