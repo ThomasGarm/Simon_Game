@@ -1,5 +1,5 @@
-from sequence import *
-from player import *
+from sequence import Sequence
+from player import Player
 import time
 import os
 
@@ -8,10 +8,14 @@ class Game:
         self.display = None
         self.sequence = Sequence()
         self.player = Player()
+        
 
     def initialize_player(self):
         """insert player's attributes in game"""
         self.player.user_name()
+
+    #def initialize_sequence(self):
+        #self.sequence.random_sequence()
 
     def launch_sequence(self):
         """get and display simon's sequences in amount of time"""
@@ -39,10 +43,15 @@ class Game:
                return False
 
     def level_difficulty(self):
-        self.difficulty = input("Choose the difficulty : easy, medium, hard: \n")
+        self.difficulty = input("Choose the difficulty : easy, medium, hard: \n").lower()
+        try:
+            assert self.difficulty == "easy" or self.difficulty == "medium" or self.difficulty == "hard"
+        except AssertionError as a:
+            return self.level_difficulty()
 
 
     def display_difficulty(self):
+        """set the speed of display"""
         if self.difficulty == "easy":
             self.display = 3
         if self.difficulty == "medium":
@@ -50,6 +59,17 @@ class Game:
         if self.difficulty == "hard":
             self.display = 1
         return self.display
+
+    """def random_difficulty(self): # set the range of self.number
+        if self.difficulty == "easy":
+            self.sequence.last_number = 10
+        if self.difficulty == "medium":
+            self.sequence.last_number = 50
+        if self.difficulty == "hard":
+            self.sequence.last_number = 100
+        return self.sequence.last_number"""
+
+    
 
                
             

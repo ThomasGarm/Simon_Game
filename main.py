@@ -11,7 +11,7 @@ game.level_difficulty() #player choose between three level of difficulty
 
 while continuer == True:
     
-        game.launch_sequence() 
+        game.launch_sequence()
         game.comparison() 
     
         
