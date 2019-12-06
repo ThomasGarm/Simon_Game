@@ -19,6 +19,7 @@ class Game:
 
     def launch_sequence(self):
         """get and display simon's sequences in amount of time"""
+        self.random_difficulty()
         self.sequence.random_sequence()
         for i in self.sequence.number:
             print(i)
@@ -60,14 +61,14 @@ class Game:
             self.display = 1
         return self.display
 
-    """def random_difficulty(self): # set the range of self.number
+    def random_difficulty(self): # set the range of self.number
         if self.difficulty == "easy":
             self.sequence.last_number = 10
         if self.difficulty == "medium":
             self.sequence.last_number = 50
         if self.difficulty == "hard":
             self.sequence.last_number = 100
-        return self.sequence.last_number"""
+        return self.sequence.last_number
 
     
 
