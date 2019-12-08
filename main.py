@@ -11,12 +11,8 @@ while continuer:
     game.launch_sequence() #display random integer
     if game.comparison() == False: #if player is wrong
         end =input("continue?\n y/n?").lower()
-        try:
-            assert end == "n"
-        except AssertionError as a:
-            pass
         if end == "n":
-                continuer = False
+            continuer = False
         
         
     

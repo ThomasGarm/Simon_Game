@@ -44,7 +44,7 @@ class Game:
             player_choice = self.player_turn()
             self.clear_screen()
             if player_choice != element:
-                self.number = []
+                self.sequence.number = []
                 return False
 
     def level_difficulty(self):
